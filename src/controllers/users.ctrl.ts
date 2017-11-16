@@ -11,7 +11,7 @@ export const all = (req: Request, res: Response, next: NextFunction) =>{
 };
 
 export const create= (req: Request, res: Response, next: NextFunction) => {
-    procedures.create(req.body.username, req.body.email, req.body.password)
+    procedures.create(req.body.name, req.body.username, req.body.email, req.body.password)
         .then((sets) =>{
             res.json(sets);
         })
@@ -25,8 +25,8 @@ export const read = (req:Request , res: Response, next:NextFunction) => {
 
 };
 
-export const update = ( req:Request, res: Response, next:NextFunction) => {
-    procedures.update(+req.params.id, req.body.username, req.body.email, req.body.password)
+export const update = (req:Request, res: Response, next:NextFunction) => {
+    procedures.update(+req.params.id, req.body.name, req.body.username, req.body.email, req.body.password)
         .then((sets) =>{
             res.json(sets)
         })

@@ -7,7 +7,8 @@ const poolConfig = {
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
-    database: process.env.DATABASE_NAME
+    database: process.env.DATABASE_NAME,
+    connectionLimit: 2
 };
 exports.pool = mysql_1.createPool(poolConfig);
 const formatArguments = (args = []) => {

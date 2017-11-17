@@ -8,7 +8,7 @@ exports.all = (req, res, next) => {
     });
 };
 exports.create = (req, res, next) => {
-    users_proc_1.default.create(req.body.username, req.body.email, req.body.password)
+    users_proc_1.default.create(req.body.name, req.body.username, req.body.email, req.body.password)
         .then((sets) => {
         res.json(sets);
     });
@@ -20,7 +20,7 @@ exports.read = (req, res, next) => {
     });
 };
 exports.update = (req, res, next) => {
-    users_proc_1.default.update(+req.params.id, req.body.username, req.body.email, req.body.password)
+    users_proc_1.default.update(+req.params.id, req.body.name, req.body.username, req.body.email, req.body.password)
         .then((sets) => {
         res.json(sets);
     });

@@ -7,14 +7,14 @@ const all = () => {
 const read = (id) => {
     return base_proc_1.row('spGetUser', [id]);
 };
-const create = (username, email, password) => {
-    return base_proc_1.row('spInsertUser', [username, email, password]);
+const create = (name, username, email, password) => {
+    return base_proc_1.row('spInsertUser', [name, username, email, password]);
 };
 const destroy = (id) => {
     return base_proc_1.empty('spDeleteUser', [id]);
 };
-const update = (id, username, email, password) => {
-    return base_proc_1.empty('spUdateUser', [id, username, email, password]);
+const update = (id, name, username, email, password) => {
+    return base_proc_1.empty('spUdateUser', [id, name, username, email, password]);
 };
 exports.default = {
     create,

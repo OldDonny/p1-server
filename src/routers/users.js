@@ -8,5 +8,5 @@ router
     .get('/:id', users_ctrl_1.read)
     .delete('/:id', users_ctrl_1.destroy)
     .post('/', users_ctrl_1.create)
-    .put('/');
+    .put('/:id', users_ctrl_1.update);
 exports.default = router;

@@ -31,4 +31,3 @@ exports.destroy = (req, res, next) => {
         res.json(sets);
     });
 };
-exports.followedby = (req) => ;

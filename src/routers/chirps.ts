@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import { all, create, read,update, destroy } from '../controllers/chirps.ctrl';
 
 

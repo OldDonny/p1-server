@@ -22,6 +22,13 @@ const update = (id: number, name: string, username:string, email:string, passwor
     return empty('spUdateUser',[id, name, username, email, password])
 };
 
+const following = () => {
+
+}
+
+const followers = () => {
+    
+}
 
 export default {
     create,

@@ -38,3 +38,11 @@ export const destroy = (req: Request, res: Response, next: NextFunction) => {
             res.json(sets)
         });
 }
+
+export const followedby = (req:Request, res: Response, next: NextFunction) => {
+    
+}
+
+export const following= (req: Request, res: Response, next: NextFunction) => {
+    
+}

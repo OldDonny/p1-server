@@ -12,8 +12,13 @@ const getFollowingChirps = (followerid: number) => {
     return rows('spGetFollowingChirps', [followerid])
 }
 
+const getFollowingUsers = (followerid: number) => {
+    return rows('spGetFollowingUsers', [followerid])
+}
+
 export default {
     newFollow,
     unFollow,
-    getFollowingChirps
+    getFollowingChirps,
+    getFollowingUsers
 }

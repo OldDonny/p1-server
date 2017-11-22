@@ -10,8 +10,12 @@ const unFollow = (followerid, followingid) => {
 const getFollowingChirps = (followerid) => {
     return base_proc_1.rows('spGetFollowingChirps', [followerid]);
 };
+const getFollowingUsers = (followerid) => {
+    return base_proc_1.rows('spGetFollowingUsers', [followerid]);
+};
 exports.default = {
     newFollow,
     unFollow,
-    getFollowingChirps
+    getFollowingChirps,
+    getFollowingUsers
 };

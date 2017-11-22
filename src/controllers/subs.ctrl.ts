@@ -22,3 +22,10 @@ export const getFollowingChirps = (req: Request, res: Response, next: NextFuncti
             res.json(sets);
         });
 };
+
+export const getFollowingUsers = (req: Request, res: Response, next: NextFunction) => {
+    procedures.getFollowingUsers(+req.body.followerid)
+        .then((sets) => {
+            res.json(sets);
+        })
+}

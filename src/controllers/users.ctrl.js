@@ -34,7 +34,10 @@ exports.destroy = (req, res, next) => {
 exports.login = (req, res, next) => {
     users_proc_1.default.login(req.body.username)
         .then((user) => {
-        if (req.body.password === p.password)
-            res.sendStatus(200);
+        if (req.body.password !== user.password) {
+            throw new Error();
+        }
+        delete user.password;
+        res.json(user);
     });
 };

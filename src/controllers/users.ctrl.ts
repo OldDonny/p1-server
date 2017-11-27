@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { procedure } from '../config/db/index';
 import procedures from '../procedures/users.proc'
+import { METHODS } from 'http';
 
 export const all = (req: Request, res: Response, next: NextFunction) => {
     procedures.all()
@@ -39,8 +40,15 @@ export const destroy = (req: Request, res: Response, next: NextFunction) => {
 };
 
 export const login = (req: Request, res: Response, next:NextFunction) => {
-    procedures.login(req.body.username, req.body.password)
-        .then((sets) => {
-            res.sendStatus(200)
+    procedures.login(req.body.username)
+        .then((user) => {
+            if(req.body.password !== user.password){
+                throw new Error();
+            }
+            delete user.password
+
+            res.json(user);
+
+            
         });
 };

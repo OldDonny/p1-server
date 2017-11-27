@@ -32,8 +32,9 @@ exports.destroy = (req, res, next) => {
     });
 };
 exports.login = (req, res, next) => {
-    users_proc_1.default.login(req.body.username, req.body.password)
-        .then((sets) => {
-        res.json(sets);
+    users_proc_1.default.login(req.body.username)
+        .then((user) => {
+        if (req.body.password === p.password)
+            res.sendStatus(200);
     });
 };

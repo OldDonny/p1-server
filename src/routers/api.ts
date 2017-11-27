@@ -10,5 +10,6 @@ router
 .use('/chirps', chirps)
 .use('/users', users)
 .use('/subs', subs)
+.use('/login', users)
 
 export default router

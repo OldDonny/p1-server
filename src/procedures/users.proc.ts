@@ -20,7 +20,7 @@ const update = (id: number, name: string, username: string, email: string, passw
     return empty('spUdateUser',[id, name, username, email, password])
 };
 
-const login = (username: string, password:string) => {
+const login = (username: string) => {
     return row('spGetUserByUsername', [username])
 }
 

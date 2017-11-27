@@ -7,14 +7,12 @@ const api_1 = require("./routers/api");
 const app = express();
 app
     .disable('x-powered-by')
-    .use((req, res, next) => {
-    res.header('Acess-Control-Allow-Origin', "*");
-    res.header('Acess-Control-Allow-Methods', 'GET,POST,UPDATE,DELETE,PUT');
-    res.header('Acess-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-})
     .use(bp.json())
     .use(bp.urlencoded({ extended: true }))
-    .use('/api', api_1.default)
+    .use('/api', (req, res, next) => {
+    console.log('making api call');
+    next();
+}, api_1.default)
     .use(express.static(path.join(__dirname + '/../dist')))
     .get('/*', (req, res) => {
     res.sendFile(path.join(__dirname + '/../dist/index.html'));

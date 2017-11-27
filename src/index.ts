@@ -8,14 +8,12 @@ const app = express();
 app 
 
     .disable('x-powered-by')
-    .use((req, res, next) => {
-        res.header('Acess-Control-Allow-Origin', "*");
-        res.header('Acess-Control-Allow-Methods', 'GET,POST,UPDATE,DELETE,PUT');
-        res.header('Acess-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    })
     .use(bp.json())
     .use(bp.urlencoded({extended:true}))
-    .use('/api',api)
+    .use('/api', (req, res, next) => { 
+        console.log('making api call');
+        next();
+    }, api)
 
     //to serve dist 
     .use(express.static(path.join(__dirname + '/../dist')))

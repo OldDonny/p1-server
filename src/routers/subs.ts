@@ -1,11 +1,12 @@
 import { Router } from 'express';
-import { newFollow, unFollow, getFollowingChirps } from '../controllers/subs.ctrl';
+import { newFollow, unFollow, getFollowingChirps, getFollowingUsers } from '../controllers/subs.ctrl';
 
 const router = Router();
 
 router
     .post('/', newFollow)
     .delete('/:id', unFollow)
-    .get('/:id', getFollowingChirps)
+    .get('/chirps/:id', getFollowingChirps)
+    .get('/users/:id', getFollowingUsers)
 
 export default router;

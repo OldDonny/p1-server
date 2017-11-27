@@ -19,3 +19,9 @@ exports.getFollowingChirps = (req, res, next) => {
         res.json(sets);
     });
 };
+exports.getFollowingUsers = (req, res, next) => {
+    subs_proc_1.default.getFollowingUsers(+req.body.followerid)
+        .then((sets) => {
+        res.json(sets);
+    });
+};

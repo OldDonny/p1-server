@@ -36,5 +36,11 @@ export const destroy = (req: Request, res: Response, next: NextFunction) => {
         .then((sets) => {
             res.json(sets)
         });
-}
+};
 
+export const login = (req: Request, res: Response, next:NextFunction) => {
+    procedures.login(req.body.username, req.body.password)
+        .then((sets) => {
+            res.json(sets)
+        });
+};

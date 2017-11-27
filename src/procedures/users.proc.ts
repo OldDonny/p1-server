@@ -20,11 +20,16 @@ const update = (id: number, name: string, username: string, email: string, passw
     return empty('spUdateUser',[id, name, username, email, password])
 };
 
+const login = (username: string, password:string) => {
+    return row('spGetUserByUsername', [username])
+}
+
 
 export default {
     create,
     read, 
     update,
     destroy,
-    all
+    all, 
+    login
 }

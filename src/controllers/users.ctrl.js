@@ -31,3 +31,9 @@ exports.destroy = (req, res, next) => {
         res.json(sets);
     });
 };
+exports.login = (req, res, next) => {
+    users_proc_1.default.login(req.body.username, req.body.password)
+        .then((sets) => {
+        res.json(sets);
+    });
+};

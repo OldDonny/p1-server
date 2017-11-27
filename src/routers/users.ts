@@ -10,6 +10,6 @@ router
     .delete('/:id', destroy)
     .post('/', create)
     .put('/:id', update)
-    .post('/', login)
+    .post('/login', login)
 
     export default router;

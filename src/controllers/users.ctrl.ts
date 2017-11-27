@@ -41,7 +41,6 @@ export const destroy = (req: Request, res: Response, next: NextFunction) => {
 export const login = (req: Request, res: Response, next:NextFunction) => {
     procedures.login(req.body.username, req.body.password)
         .then((username) => {
-            res.send(username)
-            res.json(username)
+            res.status(400);
         });
 };

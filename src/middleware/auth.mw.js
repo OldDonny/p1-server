@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const fs = require("fs");
 const path = require("path");
 const ramda_1 = require("ramda");
 const bcrypt_mw_1 = require("./bcrypt.mw");
@@ -8,7 +9,7 @@ const usersPath = path.join(__dirname, '..', 'users.json');
 const jwt_mw_1 = require("./jwt.mw");
 exports.login = (req, res, next) => {
     const { user, password } = req.body;
-    const users = ;
+    const users = (fs.readFileSync(usersPath, 'utf-8'));
     const found = users.find((u) => {
         if (u.user === user) {
             return true;

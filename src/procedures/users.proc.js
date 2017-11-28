@@ -16,14 +16,10 @@ const destroy = (id) => {
 const update = (id, name, username, email, password) => {
     return base_proc_1.empty('spUdateUser', [id, name, username, email, password]);
 };
-const login = (username) => {
-    return base_proc_1.row('spGetUserByUsername', [username]);
-};
 exports.default = {
     create,
     read,
     update,
     destroy,
-    all,
-    login
+    all
 };

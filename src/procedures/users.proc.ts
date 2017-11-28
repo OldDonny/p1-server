@@ -20,9 +20,7 @@ const update = (id: number, name: string, username: string, email: string, passw
     return empty('spUdateUser',[id, name, username, email, password])
 };
 
-const login = (username: string) => {
-    return row('spGetUserByUsername', [username])
-}
+
 
 
 export default {
@@ -30,6 +28,6 @@ export default {
     read, 
     update,
     destroy,
-    all, 
-    login
+    all
+   
 }

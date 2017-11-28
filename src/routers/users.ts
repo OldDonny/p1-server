@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { all, create, read, update, destroy, login } from '../controllers/users.ctrl'
+import { all, create, read, update, destroy, } from '../controllers/users.ctrl'
 
 
 const router = Router();
@@ -10,6 +10,6 @@ router
     .delete('/:id', destroy)
     .post('/', create)
     .put('/:id', update)
-    .post('/login', login)
+    
 
     export default router;

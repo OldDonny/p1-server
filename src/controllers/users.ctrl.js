@@ -31,13 +31,3 @@ exports.destroy = (req, res, next) => {
         res.json(sets);
     });
 };
-exports.login = (req, res, next) => {
-    users_proc_1.default.login(req.body.username)
-        .then((user) => {
-        if (req.body.password !== user.password) {
-            throw new Error();
-        }
-        delete user.password;
-        res.json(user);
-    });
-};
